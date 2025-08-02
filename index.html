@@ -66,9 +66,6 @@
     <label>Total Quantity (cartons):</label>
     <input type="number" id="quantity" step="1">
 
-    <label>Value per CBM:</label>
-    <input type="number" id="valuePerCBM" step="any">
-
     <button onclick="calculateCBM()">Calculate</button>
 
     <div class="results" id="resultBox" style="display:none;">
@@ -98,8 +95,8 @@
         height = height / 2.54;
       }
 
-      const cbmPerCarton = ((length * width * height) / 1728) / valuePerCBM;
-      const totalCBM = cbmPerCarton * quantity;
+      const cbmPerCarton = ((length * width * height) / 1728) / 35.315;
+      const totalCBM = 35.315 * quantity;
 
       document.getElementById("cbmPerCarton").textContent = cbmPerCarton.toFixed(4);
       document.getElementById("totalCBM").textContent = totalCBM.toFixed(4);
