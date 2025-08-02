@@ -98,7 +98,7 @@
         height = height / 2.54;
       }
 
-      const cbmPerCarton = (length * width * height) / 1728;
+      const cbmPerCarton = ((length * width * height) / 1728) / valuePerCBM;
       const totalCBM = cbmPerCarton * quantity;
 
       document.getElementById("cbmPerCarton").textContent = cbmPerCarton.toFixed(4);
