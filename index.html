@@ -74,8 +74,6 @@
     <div class="results" id="resultBox" style="display:none;">
       <p><strong>CBM per Carton:</strong> <span id="cbmPerCarton"></span></p>
       <p><strong>Total CBM:</strong> <span id="totalCBM"></span></p>
-      <p><strong>Cost per Carton:</strong> <span id="costPerCarton"></span></p>
-      <p><strong>Total Cost:</strong> <span id="totalCost"></span></p>
     </div>
   </div>
 
@@ -102,13 +100,9 @@
 
       const cbmPerCarton = (length * width * height) / 1728;
       const totalCBM = cbmPerCarton * quantity;
-      const costPerCarton = cbmPerCarton * valuePerCBM;
-      const totalCost = totalCBM * valuePerCBM;
 
       document.getElementById("cbmPerCarton").textContent = cbmPerCarton.toFixed(4);
       document.getElementById("totalCBM").textContent = totalCBM.toFixed(4);
-      document.getElementById("costPerCarton").textContent = costPerCarton.toFixed(2);
-      document.getElementById("totalCost").textContent = totalCost.toFixed(2);
       document.getElementById("resultBox").style.display = "block";
     }
   </script>
