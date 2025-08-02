@@ -81,6 +81,7 @@
       let height = parseFloat(document.getElementById("height").value);
       const quantity = parseInt(document.getElementById("quantity").value);
       const valuePerCBM = parseFloat(document.getElementById("valuePerCBM").value);
+      valuePerCBM = 35.315;
       const unit = document.getElementById("unit").value;
 
       if (isNaN(length) || isNaN(width) || isNaN(height) || isNaN(quantity) || isNaN(valuePerCBM)) {
@@ -95,8 +96,8 @@
         height = height / 2.54;
       }
 
-      const cbmPerCarton = ((length * width * height) / 1728) / 35.315;
-      const totalCBM = 35.315 * quantity;
+      const cbmPerCarton = ((length * width * height) / 1728) / valuePerCBM;
+      const totalCBM = cbmPerCarton * quantity;
 
       document.getElementById("cbmPerCarton").textContent = cbmPerCarton.toFixed(4);
       document.getElementById("totalCBM").textContent = totalCBM.toFixed(4);
